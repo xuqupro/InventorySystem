@@ -49,7 +49,7 @@ namespace InventorySystem.Commands
                 {
                     Inventory inventory = inventories[i];
 
-                    Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.Lead);
+                    Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
                 }
             }
         }
@@ -85,11 +85,11 @@ namespace InventorySystem.Commands
             Console.WriteLine("{0}-{1}", inventory.Code, inventory.Name);
             Console.WriteLine("Stock: {0}", inventory.Stock);
             Console.WriteLine("Consumption-rate: {0}", inventory.Rate);
-            Console.WriteLine("Lead-time: {0}", inventory.Lead);
+            Console.WriteLine("Lead-time: {0}", inventory.DateBill);
         }
         private void PrintHeader()
         {
-            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", "Name", "Code", "Rate", "Stock", "Lead");
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", "Name", "Code", "Rate", "Stock", "Date Bill");
             Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", "~~~~", "~~~~", "~~~~", "~~~~~", "~~~~");
         }
 

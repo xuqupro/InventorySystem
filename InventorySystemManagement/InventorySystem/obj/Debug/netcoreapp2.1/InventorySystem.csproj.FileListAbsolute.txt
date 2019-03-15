@@ -9,3 +9,14 @@ F:\uploadgit\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\I
 F:\uploadgit\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.AssemblyInfo.cs
 F:\uploadgit\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.dll
 F:\uploadgit\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.pdb
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\bin\Debug\netcoreapp2.1\InventorySystem.deps.json
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\bin\Debug\netcoreapp2.1\InventorySystem.runtimeconfig.json
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\bin\Debug\netcoreapp2.1\InventorySystem.runtimeconfig.dev.json
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\bin\Debug\netcoreapp2.1\InventorySystem.dll
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\bin\Debug\netcoreapp2.1\InventorySystem.pdb
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.csprojAssemblyReference.cache
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.csproj.CoreCompileInputs.cache
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.AssemblyInfoInputs.cache
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.AssemblyInfo.cs
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.dll
+F:\uploadgit\dotnet\InventorySystemManagement\InventorySystem\obj\Debug\netcoreapp2.1\InventorySystem.pdb

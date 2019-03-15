@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -42,9 +43,9 @@ namespace InventorySystem.Commands
                     int code = Convert.ToInt32(line[1]);
                     int rate = Convert.ToInt32(line[2]);
                     int stock = Convert.ToInt32(line[3]);
-                    int lead = Convert.ToInt32(line[4]);
+                    string dateBill = line[4];
 
-                    inventories[i] = new Inventory(name, code, rate, stock, lead);
+                    inventories[i] = new Inventory(name, code, rate, stock, dateBill);
                 }
 
                 sr.Close();
@@ -69,7 +70,7 @@ namespace InventorySystem.Commands
                 {
                     Inventory inventory = inventories[i];
 
-                    sw.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.Lead);
+                    sw.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
                 }
 
                 sw.Close();
@@ -81,6 +82,44 @@ namespace InventorySystem.Commands
                 Console.WriteLine("Could not save file: ", exc.Message);
             }
         }
+        public void FindByDay(string date)
+        {
+            try
+            {
+                DateTime outDate;
+                string[] dateFormats = { "d.M.yy","dd.MM.yyyy","d-M-yy","dd-MM-yyyy", "d/M/yy","dd/MM/yyyy"};
+               
+                if (DateTime.TryParseExact(date, dateFormats, DateTimeFormatInfo.InvariantInfo,
+                    DateTimeStyles.None, out outDate))
+                {
+                    string valid = outDate.ToString("dd-MM-yyyy");
+                    int idDay = FindIdDay(valid);
+                    Console.WriteLine("Find Income follow date: {0},{1}", outDate.ToString("dd-MM-yyyy"),idDay);
+                    Inventory inventory = inventories[idDay];
+                    PrintInventory(inventory);
+
+                }
+                else
+                {
+                    Console.WriteLine("Not valid: {0}", date);
+                }
+            }catch(Exception exc)
+            {
+                Console.WriteLine("Could not find data: ", exc.Message);
+            }
+        }
+        public int FindIdDay(string idDay)
+        {
+            for(int i = 0; i < inventories.Length; i++)
+            {
+                if (idDay == inventories[i].DateBill)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public void FindInventory(string itemCode)
         {
             try
@@ -97,7 +136,8 @@ namespace InventorySystem.Commands
                 Console.WriteLine("Code Inventory at {0}", idConvert);
                 int id = FindItemIndex(idConvert);
                 Inventory inventory = inventories[id];
-                Console.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.Lead);
+                // Console.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
+                PrintInventory(inventory);
             }
             catch (Exception exec)
             {
@@ -135,6 +175,11 @@ namespace InventorySystem.Commands
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "q", "quit", null, "Ends the program and returns");
 
             Console.WriteLine();
+        }
+        private void PrintInventory(Inventory inventory)
+        {
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,15}", "Name", "Code", "Rate", "Stock", "Date Bill");
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,15}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
         }
     }
 }

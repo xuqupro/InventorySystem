@@ -55,7 +55,7 @@ namespace InventorySystem
                 case "incomed":
                     if (IsValidPameter(1))
                     {
-
+                        managementCmd.FindByDay(parameters[1]);
                     }
                     break;
                 case "fi":

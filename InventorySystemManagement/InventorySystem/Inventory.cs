@@ -10,7 +10,7 @@ namespace InventorySystem
         private int code;
         private int rate;
         private int stock;
-        private int date;
+        private string dateBill;
 
         public string Name
         {
@@ -64,26 +64,26 @@ namespace InventorySystem
             }
         }
 
-        public int Lead
+        public string DateBill
         {
             get
             {
-                return date;
+                return dateBill;
             }
 
             set
             {
-                date = value;
+                dateBill = value;
             }
         }
 
-        public Inventory(string name, int code, int rate, int stock, int lead)
+        public Inventory(string name, int code, int rate, int stock, string date)
         {
             this.name = name;
             this.code = code;
             this.rate = rate;
             this.stock = stock;
-            this.date = lead;
+            this.dateBill = date;
         }
     }
 }
