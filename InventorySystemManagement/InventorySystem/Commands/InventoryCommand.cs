@@ -30,10 +30,8 @@ namespace InventorySystem.Commands
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "~~~", "~~~~~~~", "~~~~~~", "~~~~~~~~~~~");
 
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "li", "listitems", null, "List all items in inventory");
-            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "+", "inc", "code qty", "Increase an item stock in inventory");
-            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "-", "dec", "code qty", "Decrease an item stock in inventory");
-            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "lw", "low", null, "List items with low stock level");
-            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "pk", "prek", null, "List preorder quantities for k days");
+            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "icd", "incomed", "date", "List income items by date");
+            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "fi", "findi", "code item", "Find items by code");
 
             Console.WriteLine();
         }
@@ -49,7 +47,7 @@ namespace InventorySystem.Commands
                 {
                     Inventory inventory = inventories[i];
 
-                    Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
+                    Console.WriteLine("{0,-20}{1,5}{2,5}{3,10}{4,15}", inventory.Name, inventory.Code, inventory.Income, inventory.Stock, inventory.DateBill);
                 }
             }
         }
@@ -84,13 +82,13 @@ namespace InventorySystem.Commands
 
             Console.WriteLine("{0}-{1}", inventory.Code, inventory.Name);
             Console.WriteLine("Stock: {0}", inventory.Stock);
-            Console.WriteLine("Consumption-rate: {0}", inventory.Rate);
+            Console.WriteLine("Consumption-rate: {0}", inventory.Income);
             Console.WriteLine("Lead-time: {0}", inventory.DateBill);
         }
         private void PrintHeader()
         {
-            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", "Name", "Code", "Rate", "Stock", "Date Bill");
-            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,5}", "~~~~", "~~~~", "~~~~", "~~~~~", "~~~~");
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,10}{4,15}", "Name", "Code", "Income", "Stock", "Date Bill");
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,10}{4,15}", "~~~~", "~~~~", "~~~~", "~~~~~", "~~~~");
         }
 
     }

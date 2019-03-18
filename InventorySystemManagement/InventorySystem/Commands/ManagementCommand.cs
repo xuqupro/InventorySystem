@@ -70,7 +70,7 @@ namespace InventorySystem.Commands
                 {
                     Inventory inventory = inventories[i];
 
-                    sw.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
+                    sw.WriteLine("{0},{1},{2},{3},{4}", inventory.Name, inventory.Code, inventory.Income, inventory.Stock, inventory.DateBill);
                 }
 
                 sw.Close();
@@ -169,7 +169,6 @@ namespace InventorySystem.Commands
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "~~~", "~~~~~~~", "~~~~~~", "~~~~~~~~~~~");
 
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "?", "help", null, "Print this help menu");
-            Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "lf", "lstfiles", null, "List the files in working directory");
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "ldb", "loaddb", "fname", "Loads the database file");
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "sdb", "savedb", "fname", "Saves current database in file");
             Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", "q", "quit", null, "Ends the program and returns");
@@ -178,8 +177,8 @@ namespace InventorySystem.Commands
         }
         private void PrintInventory(Inventory inventory)
         {
-            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,15}", "Name", "Code", "Rate", "Stock", "Date Bill");
-            Console.WriteLine("{0,-20}{1,5}{2,5}{3,6}{4,15}", inventory.Name, inventory.Code, inventory.Rate, inventory.Stock, inventory.DateBill);
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,10}{4,15}", "Name", "Code", "Income", "Stock", "Date Bill");
+            Console.WriteLine("{0,-20}{1,5}{2,5}{3,10}{4,15}", inventory.Name, inventory.Code, inventory.Income, inventory.Stock, inventory.DateBill);
         }
     }
 }

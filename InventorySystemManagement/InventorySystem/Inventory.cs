@@ -8,7 +8,7 @@ namespace InventorySystem
     {
         private string name;
         private int code;
-        private int rate;
+        private int income;
         private int stock;
         private string dateBill;
 
@@ -38,16 +38,16 @@ namespace InventorySystem
             }
         }
 
-        public int Rate
+        public int Income
         {
             get
             {
-                return rate;
+                return income;
             }
 
             set
             {
-                rate = value;
+                income = value;
             }
         }
 
@@ -77,11 +77,11 @@ namespace InventorySystem
             }
         }
 
-        public Inventory(string name, int code, int rate, int stock, string date)
+        public Inventory(string name, int code, int income, int stock, string date)
         {
             this.name = name;
             this.code = code;
-            this.rate = rate;
+            this.income = income;
             this.stock = stock;
             this.dateBill = date;
         }
